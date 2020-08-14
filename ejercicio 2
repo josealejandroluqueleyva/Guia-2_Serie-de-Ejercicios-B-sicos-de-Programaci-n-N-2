@@ -1,0 +1,26 @@
+package ejercicio2_serie2_guia2;
+
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Ejercicio2_serie2_guia2 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+        DecimalFormat decimal = new DecimalFormat("#.00");
+
+        int r = 0;
+        
+        System.out.println("¿Cual es el radio del circulo?");
+        r = entrada.nextInt();
+        
+        double h = (double) Math.sqrt((Math.pow(r, 2) + Math.pow(r, 2)));
+        double cuadrado = (double) h*h;
+        double circulo = (double) Math.PI*(Math.pow(r, 2));
+        double sombra = circulo - cuadrado;
+        
+        System.out.println("La resta del area del circulo y del cuadrado equivale a " + decimal.format(sombra));
+    }
+
+}
