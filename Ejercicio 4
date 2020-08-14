@@ -1,0 +1,53 @@
+package ejercicio4_serie2_guia2;
+
+import java.util.Scanner;
+
+public class Ejercicio4_serie2_guia2 {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        String vehiculo = "";
+        int brt = 0;
+        int iva = 0;
+        int total = 0;
+
+        System.out.println("¿Qué tipo de carro es?:");
+        System.out.println("Si es una camioneta escriba 'camioneta'");
+        System.out.println("Si es una automovil escriba 'automovil'");
+        vehiculo = teclado.nextLine();
+
+        switch (vehiculo) {
+            case "camioneta":
+                System.out.println("¿Cual es el precio bruto de la camioneta?");
+                brt = teclado.nextInt();
+                if (brt < 80) {
+                    iva = 0;
+                } else {
+                    iva = brt / 2;
+                    total = iva + brt;
+                }
+                System.out.println("El precio final de la camioneta es: " + total + " y su impuesto es de " + iva);
+                break;
+            case "automovil":
+                System.out.println("¿Cual es el precio bruto del automovil?");
+                brt = teclado.nextInt();
+                if (brt < 20) {
+                    iva = 5;
+                    total = iva + brt;
+                } else if (brt >= 20 && brt <= 40) {
+                    iva = brt / 5;
+                    total = iva + brt;
+                } else if (brt > 40) {
+                    iva = 9;
+                    total = iva + brt;
+                } else {
+                    System.out.println("Vuelve a intentarlo y escrive el precio en enteros");
+                }
+                System.out.println("El precio final de la automovil es: " + total + " y su impuesto es de " + iva);
+                break;
+            default:
+                System.out.println("El tipo de carro indicado no es el correcto");
+        }
+    }
+}
