@@ -1,0 +1,142 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author josea
+ */
+public class Ejercicio5_serie2_guia2 {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        int eleccion = 0;
+        int cantidad = 0;
+        double d = 0; 
+        double c = 0;
+        
+        String f="";    
+        
+        
+
+        System.out.println("****************************************************************************************");
+        System.out.println("*Sea usted bienvenido a nuestro restaurante, esperamos poder brindarle la mejor atención*");
+        System.out.println("****************************************************************************************");
+        System.out.println("Porfavor escoja el tipo de comida del cual se encuentra con antojo: ");
+        System.out.println("1. Vegetariana");
+        System.out.println("2. No vegetariana");
+        System.out.println("3. Rapida");
+
+        eleccion = entrada.nextInt();
+        if (eleccion == 1) {
+            System.out.println("Escoger el plato de comida vegetariana que desea : ");
+
+            System.out.println("1. Sopas de Vegetales");
+            System.out.println("2. Ensaladas");
+            System.out.println("3. Jugo");
+
+            eleccion = entrada.nextInt();
+            switch (eleccion) {
+                case 1:
+                    System.out.println("¿Cuantas sopas desea?");
+                    int precio = 10000;
+                    cantidad = entrada.nextInt();
+                     c = (precio * cantidad) + ((precio * cantidad) * 0.19);
+                     d = c - (c * 0.20);
+f="sopas"; 
+                    break;
+
+                case 2:
+                    System.out.println("¿Cuantas ensaladas desea?");
+                    precio = 25000;
+
+                    cantidad = entrada.nextInt();
+                    c = (precio * cantidad) + ((precio * cantidad) * 0.19);
+                    d = c - (c * 0.20);
+f="ensaldas"; 
+                    break;
+                case 3:
+
+                    System.out.println("¿Cuantas jugos desea?");
+
+                    precio = 10000;
+
+                    cantidad = entrada.nextInt();
+                    c = (precio * cantidad) + ((precio * cantidad) * 0.19);
+                    d = c - (c * 0.20);
+                    f=" jugos";
+                    break;
+
+            }
+
+        } else if (eleccion == 2) {
+            System.out.println("Las comidas no vegetarianas incluyen,porfavor introduzca el numero correspondiente a su elección: ");
+            System.out.println("1. Bandeja de carne.");
+            System.out.println("2. Bandeja de pollo.");
+
+            eleccion = entrada.nextInt();
+            switch (eleccion) {
+                case 1:
+                    System.out.println("¿Cuantas bandejas de carne desea?");
+
+                    int precio2 = 30000;
+
+                    cantidad = entrada.nextInt();
+                     c = (precio2 * cantidad) + ((precio2 * cantidad) * 0.19);
+                     d = c - (c * 0.10);
+                     f="bandeja de carne";
+
+                    break;
+                case 2:
+                    System.out.println("¿Cuantas bandejas de pollo desea?");
+
+                    precio2 = 28000;
+
+                    cantidad = entrada.nextInt();
+                    c = (precio2 * cantidad) + ((precio2 * cantidad) * 0.19);
+                    d = c - (c * 0.10);
+                    
+                    f="bandejas de pollos";
+
+                    break;
+
+                default:
+                    System.out.println("El numero indicado, no cumple con ninguno de nuestros menus, porfavor ingresar un numero correspondiente al menu.");
+            }
+
+        } else if (eleccion == 3) {
+            System.out.println("Escoger el plato de comida rapida que desea : ");
+
+            System.out.println("1. Perros calientes.");
+            System.out.println("2. hamburguesas");
+
+            eleccion = entrada.nextInt();
+            switch (eleccion) {
+                case 1:
+                    System.out.println("¿Cuantos perros calientes desea?");
+                    int precio3 = 5000;
+
+                    cantidad = entrada.nextInt();
+                     d = (precio3 * cantidad) + ((precio3 * cantidad) * 0.19);
+                     
+                     f="perros calientes";
+
+                    break;
+                case 2:
+                    System.out.println("¿Cuantas hamburguesas desea?");
+                    precio3 = 7000;
+                    cantidad = entrada.nextInt();
+                    d = (precio3 * cantidad) + ((precio3 * cantidad) * 0.19);
+                    f="hamburguesas";
+                    break;
+
+            } 
+
+        } else {
+            System.out.println("El numero indicado, no cumple con ninguno de nuestros menus, porfavor ingresar un numero correspondiente al menu. ");
+        } 
+        
+        System.out.println("El precio total correspondiente " + cantidad + " " + f +  " es "+ d + " pesos colombianos. ");
+
+        
+    } 
+} 
